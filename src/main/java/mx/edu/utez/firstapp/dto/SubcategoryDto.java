@@ -20,13 +20,13 @@ public class SubcategoryDto {
     private String name;
     private Boolean status;
     private Long category_id;
-
     public SubCategory getSubategory(){
        return new SubCategory(
                getId(),
                getName(),
                getStatus(),
-               new Category(category_id,"",false, null)
+               new Category(category_id,"",false, null),
+               null
 
        );
     }

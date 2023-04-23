@@ -53,8 +53,6 @@ public class SubcategoryController {
     //Actualiar un registro de subcategories
     @PutMapping("/")
     public ResponseEntity<CustomResponse<SubCategory>> update(@RequestBody SubcategoryDto subcategoryDto, @Valid BindingResult result){
-        System.out.println("AQUI ESTA");
-        System.out.println(subcategoryDto      );
         if (result.hasErrors()){
             return new ResponseEntity<>(
                     null,

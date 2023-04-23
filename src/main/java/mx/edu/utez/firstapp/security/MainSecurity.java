@@ -56,11 +56,10 @@ public class MainSecurity extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception{//solo se puede acceder a este medodo desde security
         http.cors().and().csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/api-market/contact/**").permitAll()
-                .antMatchers(HttpMethod.POST, "/api-market/auth/**").permitAll()
+                .antMatchers("/api-market/auth/**", "/api-market/contact/**").permitAll()
 //                .antMatchers("/api-firstapp/category/*").permitAll() descomentar para dar acceso publico
                 .antMatchers(HttpMethod.POST,"/api-market/user/").permitAll()
-                .antMatchers(HttpMethod.GET, "/api-market/product/*").permitAll()
+                .antMatchers( "/api-market/product/**", "/api-market/product/loadfile/*").permitAll()
                 .antMatchers(HttpMethod.POST, "/api-market/person/").permitAll()
                 .anyRequest().authenticated()
                 .and()

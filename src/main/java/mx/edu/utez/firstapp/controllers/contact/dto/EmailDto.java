@@ -7,12 +7,11 @@ import lombok.Setter;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
 @Setter
-public class EmailDto {
+@Getter
 
+public class EmailDto {
     private String fullname;
     private String email;
     private String comments;
-
 }

@@ -34,7 +34,7 @@ public class CategoryController {
     //metodo para obtener uno solo getOne investigacion
 
     @PostMapping("/")
-    public ResponseEntity<CustomResponse<Category>> insert(@RequestBody CategoryDto categoryDto, @Valid BindingResult   result){
+    public ResponseEntity<CustomResponse<Category>> insert(@RequestBody CategoryDto categoryDto, @Valid BindingResult result){
         if(result.hasErrors()){
             return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
         }
